@@ -61,7 +61,7 @@ F: true
 
 18. see part1-question18.js file
 
-19. output [6, 8, 10]. steps: after we called modifyArray([1,2,3], doSomething), it goes to the function modifyArray first, run the first for loop when i = 0, and then go to the function doSomething, then go back to the newArr.push(callback(array[i], function(x){ line, then go to the for loop of the function modifyArray as i incremeneted by 1, then jump to function doSomething, then go back to the newArr.push(callback(array[i], function(x){ line, it iterate 3 times when i = 0, i = 1, i = 2, it stops when i = 3 since the array.length = 3. Finally output [6, 8, 10].
+19. output [6, 8, 10]. steps: after we called modifyArray([1,2,3], doSomething), it goes to the function modifyArray first, step into the first for loop when i = 0, and then step into the function doSomething before the for loop ends, then go back to the newArr.push(callback(array[i], function(x){ line, then step into the for loop of the function modifyArray as i incremeneted by 1, then step to function doSomething before the for loop ends, then go back to the newArr.push(callback(array[i], function(x){ line, it iterate 3 times when i = 0, i = 1, i = 2, it stops when i = 3 since the array.length = 3, the condition false. Then finally output [6, 8, 10].
 
 20. see part1-question20.js file
 
