@@ -7,12 +7,12 @@ Name: Guo Chen
 3. line 13 prints out the last item's price after discount. output 150 if prices = [100, 200, 300] and discount = 0.5. Since the declaration of variable finalPrice is var and defined inside the function, the variable finalPrice is function scoped and we can access it later.
 
 4.
+output is 
 3
 150
 150
-i = 3, variables declared with var keyword are hoisted (initialized with undefined before the code is run) which means they are accessible in their enclosing scope even before and after they are declared. 
-150, variables declared with var keyword are hoisted (initialized with undefined before the code is run) which means they are accessible in their enclosing scope even before and after they are declared. 
-150 is the finalPrice, the original price is 300 and the discount is 0.5. variables declared with var keyword are hoisted (initialized with undefined before the code is run) which means they are accessible in their enclosing scope even before and after they are declared. 
+when i = 3 the for loop ends, variables i, discountedPrice and finalPrice are declared with var keyword are accessible in their enclosing scope even before and after they are declared. that is, three of them are defined inside the function, so they are accessible inside the whole function.
+150 is the finalPrice since the last original price inside prices is 300 and the discount is 0.5. 
 
 5.line 11 caused error, since let i is block scoped. We call variable i outside the for loop, so we cannot access it after the for loop.
 
