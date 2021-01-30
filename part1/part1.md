@@ -1,10 +1,10 @@
 Name: Guo Chen
 
-1. line 11 prints out the number of prices.length to the console, because Javascript does not have block scope until const and let were introduced, just var which is function scoped.
+1. line 11 prints out the number of prices.length to the console, it prints 3 if prices = [100,200,300]. since var i is declared inside the function, the variable i is function scoped, so we can access it later.
 
-2. line 12 prints out [Function: discountPrices] to the console. In javascript, we can call console.log(Function) inside the function. 
+2. line 12 prints out the price after discount. output 150 if prices = [100, 200, 300] and discount = 0.5. since var discountedPrice is declared inside the function, the variable discountedPrice is function scoped, so we can access it later.
 
-3. line 13 prints out the last item's price after discount. Since the declaration of var finalPrice made declares a function-scoped variable.
+3. line 13 prints out the last item's price after discount. output 150 if prices = [100, 200, 300] and discount = 0.5. Since the declaration of variable finalPrice is var and defined inside the function, the variable finalPrice is function scoped and we can access it later.
 
 4.
 3
@@ -14,21 +14,21 @@ i = 3, variables declared with var keyword are hoisted (initialized with undefin
 150, variables declared with var keyword are hoisted (initialized with undefined before the code is run) which means they are accessible in their enclosing scope even before and after they are declared. 
 150 is the finalPrice, the original price is 300 and the discount is 0.5. variables declared with var keyword are hoisted (initialized with undefined before the code is run) which means they are accessible in their enclosing scope even before and after they are declared. 
 
-5.line 11 caused error, since let is block scoped to the statement, or expression within which it is used. We call variable i outside the for loop, so the system cannot see it.
+5.line 11 caused error, since let i is block scoped. We call variable i outside the for loop, so we cannot access it after the for loop.
 
-6. line 12 caused error, since let is block scoped to the statement, or expression within which it is used. We call variable discountedPrice outside the for loop, so the system cannot see it.
+6. line 12 caused error, since let discountedPrice is block scoped defined inside the for loop. We call variable discountedPrice outside the for loop, so we cannot access it after the for loop.
 
-7. line 13 output the discounted price of the last item in the prices, since let is block scoped to the statement, or expression within which it is used. We defined and called variable finalPrice within the function discountedPrices, so the system can see it.
+7. line 13 output the finalPrice of the last item in the prices, output 150 if prices = [100,200,300] and discount = 0.5. since let is block scoped to the statement, and let finalPrice was defined inside the function(outside/before the for loop), we can regard the whole function as a block. so we can still access it inside the function after declaration.
 
-8. the function return error, since line 11 and line 12 called variables that didn't defined in the correct space.
+8. the function return error, since line 11 and line 12 called variables that didn't defined in the correct space. If we change let in line 11 and 12 to var, the output should be 3, 150, 150.
 
-9. line 11 is an error, since let i is defined block-scope inside the for loop function.
+9. line 11 caused an error, since let i is defined block-scope inside the for loop function. we cannot access it after the for loop ends.
 
-10. line 12 output the discountedPrice, since it is defined as const, the scope is global.
+10. line 12 wants to print out discountedPrice to the console, discountedPrice was defined as const and assigned calculated number into it. and even though it was defined inside the for loop, it should be accessible after the loop since it is global scoped. However, we cannot change its value once defined it, so when the for loop iterate i when i = 1 and wants to update discountedPrice, it would cause error.
 
-11. line 13 would output 0, since it is defined as const, it is global, and the later code cannot change it's number.
+11. line 13 wants to print out finalPrice to the console, finalPrice was defined as const and assigned value 0 to it inside the function. const means it is global scoped, but it cannot be changed value afterwards. since line 3 already assigned 0 to it, line 7 would cause error since it wants to assign it a new value.
 
-12. the function call caused error, console shows TypeError: Assignment to constant variable. Because in line 7, it tries to assign finalPrice a new value, which cannot, since finalPrice is defined as const, it cannot be changed value.
+12. the function call caused error, console shows TypeError: Assignment to constant variable. Because in line 7, it tries to assign finalPrice a new value, which cannot, since finalPrice is defined as const, it cannot be changed value. and also there are errors I explained in question 9, 10, 11.
 
 13.
 A: student.name
